@@ -1,0 +1,64 @@
+SQL exercises statements 8/22/16
+
+Query
+1.
+SELECT `teacher`.`teacher_id`,
+    `teacher`.`first_name`,
+    `teacher`.`last_name`,
+    `teacher`.`age`,
+    `teacher`.`salary`
+FROM `so_much_sql_send_help`.`teacher`;
+
+2.
+SELECT `class`.`class_id`,
+    `class`.`name`,
+    `class`.`description`,
+    `class`.`teacher_id`
+FROM `so_much_sql_send_help`.`class`;
+
+3.
+SELECT `student`.`student_id`,
+    `student`.`first_name`,
+    `student`.`last_name`,
+    `student`.`grade`,
+    `student`.`gpa`
+FROM `so_much_sql_send_help`.`student`;
+
+4.
+SELECT * FROM `so_much_sql_send_help`.`class` WHERE teacher_id = 1;
+
+5.  NOTE: I did not auto number the class_id's, but treated them like a college '101' numbering system
+SELECT * FROM `so_much_sql_send_help`.`class_students` WHERE class_id = 42;
+
+6.
+SELECT * FROM `so_much_sql_send_help`.`class_students` WHERE student_id = 1;
+
+7. 
+SELECT * FROM `so_much_sql_send_help`.`student` WHERE first_name like 'a%';
+
+
+Update
+1. 
+UPDATE `so_much_sql_send_help`.`teacher`
+SET
+`first_name` = 'Superman'
+WHERE `teacher_id` = 1;
+
+2.  NOTE: I did not auto number the class_id's, but treated them like a college '101' numbering system
+UPDATE `so_much_sql_send_help`.`class`
+SET
+`name` = 'Underwater Basket Weaving'
+WHERE `class_id` = 42;
+
+3. 
+UPDATE `so_much_sql_send_help`.`student`
+SET
+`first_name` = 'Wonder Woman'
+WHERE `student_id` = 1;
+
+
+Delete
+1. 
+DELETE FROM `so_much_sql_send_help`.`student`
+WHERE student_id = 10;
+
